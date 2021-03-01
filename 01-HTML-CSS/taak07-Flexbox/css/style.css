@@ -16,6 +16,7 @@
 }
 
 .stip{
+    display: flex;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -30,8 +31,19 @@
 /* TIP: Laat bovenstaande code staan */
 
 /* dobbelsteen1 */
+.dobbelsteen1{
+    align-items: center;
+    justify-content: center;
+}
 
 /* dobbelsteen2 */
+.dobbelsteen2.links{
+    align-items: center;
+    justify-content: center;
+    };
+
+
+
 
 /* dobbelsteen3 */
 
