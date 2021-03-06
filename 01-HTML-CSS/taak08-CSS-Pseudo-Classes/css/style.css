@@ -4,10 +4,30 @@
 }
 
 .menu li{
-    display: inline-block;
+    display: flex;
 }
 
 .menu li a{
     background-color: lightskyblue;
     padding: 10px;
 }
+
+/* unvisited link */
+.menu li a:link {
+    background-color: #FF0000;
+  }
+  
+  /* visited link */
+  .menu li a:visited {
+    background-color: #00FF00;
+  }
+  
+  /* mouse over link */
+  .menu li a:hover {
+    background-color: #FF00FF;
+  }
+  
+  /* selected link */
+  .menu li a:active {
+    background-color: #0000FF;
+  }

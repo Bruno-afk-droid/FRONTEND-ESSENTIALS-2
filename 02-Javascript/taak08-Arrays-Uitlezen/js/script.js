@@ -11,6 +11,13 @@ topFilms = [
     "Lawrence of Arabia"
 ];
 
+function kiesFavorieteFilm(){
+    let a = prompt("kies Favoriete Film");
+    console.log(topFilms[a-1]);
+    document.getElementsByClassName(".film"+a+ "-ranking")[0]
+}
+console.log(topFilms);
+
 document.querySelector(".film1-ranking").innerHTML = 1;
 document.querySelector(".film1-naam").innerHTML = topFilms[0];
 document.querySelector(".film2-ranking").innerHTML = 2;
