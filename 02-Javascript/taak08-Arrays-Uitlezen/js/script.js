@@ -13,8 +13,10 @@ topFilms = [
 
 function kiesFavorieteFilm(){
     let a = prompt("kies Favoriete Film");
+    if(topFilms[a-1]==null);
     console.log(topFilms[a-1]);
-    document.getElementsByClassName(".film"+a+ "-ranking")[0]
+    document.querySelector(".film"+a+"-naam").style.backgroundColor="Blue";
+    document.querySelector(".film"+a+"-naam").style.color ="White";
 }
 console.log(topFilms);
 
