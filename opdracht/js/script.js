@@ -26,6 +26,9 @@ function stringNaarPosities(str){
 //Zet een array met posities om naar een string
 function positiesNaarString(arr){
     var outputString = "";
+    for (let i =0; i <arr.length;i++){
+        outputString+=arr[i];
+    }
     //TODO: opdracht 1
     return outputString;
 }
@@ -42,8 +45,12 @@ function vermenigvuldigCodeword(strInput, strCodeword){
     var intMod = inputLength % codewordLength; //het aantal letters dat overblijft die nog moeten worden aangevuld
 
     //TODO: opdracht 2
+    for(let i=0;i<intDiv;i++)
+        outputString+=(positiesNaarString(strCodeword));
+    for(i=0;i<intMod;i++)
+        outputString+=(positiesNaarString(strCodeword[i]));
 
-    // console.log("Codeword full: " + outputString);
+    console.log("Codeword full: " + outputString);
     return outputString;
 }
 
@@ -58,7 +65,7 @@ function versleutel(){
     strCodewordFull = vermenigvuldigCodeword(strInput, strCodeword);
     arrCodewordPosities = stringNaarPosities(strCodewordFull);
     arrInputPosities = stringNaarPosities(strInput);
-
+    outputString="";
     outputArray = [];
     for (let i = 0; i < arrInputPosities.length; i++) {
         if(arrInputPosities[i] + arrCodewordPosities[i] > 26){
@@ -67,15 +74,45 @@ function versleutel(){
         else{ 
             outputArray.push(arrInputPosities[i] + arrCodewordPosities[i]);
         }
-        
     }
 
+    for(let i=0;i<outputArray.length;i++)
+    outputString+=(strAlfabet[outputArray[i]])
+    
+    console.log(outputString);
 
-    // console.log("versleuteld bericht: " + positiesNaarString(outputArray));
-    // document.querySelector("#output").value = positiesNaarString(outputArray);
+
+    console.log("versleuteld bericht: " + outputString);
+    document.querySelector("#output").value = outputString;
     strCodewordFull = [];
+
 }
 
 function ontsleutel(){
-    //TODO: opdracht 3
+    strInput = document.querySelector("#output").value; 
+    strCodeword = document.querySelector("#codeword").value;  
+    
+    strCodewordFull = vermenigvuldigCodeword(strInput, strCodeword);
+
+    arrCodewordPosities = stringNaarPosities(strCodewordFull);
+    arrInputPosities = stringNaarPosities(strInput);
+    outputString="";
+    outputArray = [];
+    for (let i = 0; i < arrInputPosities.length; i++) {
+        if(arrInputPosities[i] - arrCodewordPosities[i] < 0){
+            outputArray.push((arrInputPosities[i] - arrCodewordPosities[i])+26);
+        }
+        else{ 
+            outputArray.push(arrInputPosities[i] - arrCodewordPosities[i]);
+        }
+    }
+
+    for(let i=0;i<outputArray.length;i++)
+        outputString+=(strAlfabet[outputArray[i]])
+    
+    console.log(outputString);
+
+
+    console.log("ontsleuteld bericht: " + outputString);
+    document.querySelector("#input").value = outputString;
 }

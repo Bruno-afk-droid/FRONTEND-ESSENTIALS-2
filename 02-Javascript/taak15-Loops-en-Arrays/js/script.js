@@ -22,3 +22,6 @@ for (let i = 0; i < spelersScore.length; i++) {
 }
 
 //Schrijf hieronder je code
+for(i=0;i<rondePunten.length;i++){
+    console.log("Speler "+i+" score is " +rondePunten[i]);
+}
